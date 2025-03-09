@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <>
-    <h1>hello mahi</h1>
+    <h1>BaadCow Products</h1>
       <ProductCard />
     </>
   );
