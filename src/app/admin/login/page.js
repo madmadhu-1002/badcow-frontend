@@ -45,7 +45,7 @@ export default function LoginForm() {
 
       // Redirect after login (e.g., to dashboard)
       setTimeout(() => {
-        router.push("/add-product");
+        router.push("/admin/add-product");
       }, 1500);
     } catch (error) {
       setMessage({ type: "danger", text: error.message });
