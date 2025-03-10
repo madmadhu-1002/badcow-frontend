@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
   const router = useRouter();
-
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState({ type: "", text: "" });
 
@@ -18,15 +18,17 @@ export default function LoginForm() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     // Check if fields are empty
     if (!formData.email || !formData.password) {
       setMessage({ type: "danger", text: "All fields are required." });
+      setLoading(false);
       return;
     }
 
     try {
-      const response = await fetch("https://badcow.onrender.com/auth/login", {
+      const response = await fetch("../../api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -50,6 +52,9 @@ export default function LoginForm() {
     } catch (error) {
       setMessage({ type: "danger", text: error.message });
     }
+    finally{
+      setLoading(false);
+    }
   };
 
   return (
@@ -61,10 +66,10 @@ export default function LoginForm() {
           {message.text}
         </Alert>
       )}
-
+      
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
-          <Form.Label>Email</Form.Label>
+          <Form.Label className="me-5">Email </Form.Label>
           <Form.Control
             type="email"
             name="email"
@@ -75,7 +80,7 @@ export default function LoginForm() {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
+          <Form.Label className="me-2">Password</Form.Label>
           <Form.Control
             type="password"
             name="password"
@@ -86,7 +91,7 @@ export default function LoginForm() {
         </Form.Group>
 
         <Button variant="primary" type="submit" className="w-full mt-3">
-          Login
+        {loading?<p>Logging In</p>:<>Login</>}
         </Button>
       </Form>
     </div>

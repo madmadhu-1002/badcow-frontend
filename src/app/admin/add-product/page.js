@@ -48,7 +48,7 @@ export default function ProductForm() {
     }
 
     try {
-      const response = await fetch("https://badcow.onrender.com/admin/products", {
+      const response = await fetch("../../api/admin/add-product", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

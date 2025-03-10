@@ -5,23 +5,34 @@ import { Card, Button } from "react-bootstrap";
 
 export default function ProductCards() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://badcow.onrender.com/products")
+    
+    fetch("api/products")
       .then((response) => response.json())
       .then((data) => {
-        console.log("Fetched data:", data); // Debugging line
+        console.log("Fetched data:", data);
         setProducts(data);
       })
-      .catch((error) => console.error("Error fetching products:", error));
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+        setError("Failed to load products.");
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
-      {products.length > 0 ? (
+      {loading ? (
+        <p>Loading products...</p>
+      ) : error ? (
+        <p className="text-red-500">{error}</p>
+      ) : products.length > 0 ? (
         products.map((product) => (
           <Card key={product._id} className="shadow-lg rounded-2xl overflow-hidden">
-            <Card.Img variant="top" src={product.imageUrl} alt={product.title} />
+            <Card.Img variant="top" src={product.imageUrl || "/placeholder.jpg"} alt={product.title} />
             <Card.Body>
               <Card.Title>{product.title}</Card.Title>
               <Card.Text>{product.description}</Card.Text>
@@ -33,7 +44,7 @@ export default function ProductCards() {
           </Card>
         ))
       ) : (
-        <p>Loading products or no products available...</p>
+        <p>No products available.</p>
       )}
     </div>
   );
