@@ -48,7 +48,7 @@ export default function ProductForm() {
     }
 
     try {
-      const response = await fetch("../../api/admin/add-product", {
+      const response = await fetch(`${process.env.API_BASE_URL}/admin/add-product`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

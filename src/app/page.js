@@ -1,4 +1,4 @@
-import ProductCard from "@/components/ProductCard.js";
+import ProductCard from "@/app/components/ProductCard.js";
 import Image from "next/image";
 
 

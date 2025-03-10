@@ -28,7 +28,7 @@ export default function LoginForm() {
     }
 
     try {
-      const response = await fetch("../../api/auth/login", {
+      const response = await fetch(`${process.env.API_BASE_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
