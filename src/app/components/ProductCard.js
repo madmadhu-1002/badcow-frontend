@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
+import { MdOutlineCurrencyRupee } from "react-icons/md";
 
 export default function ProductCards() {
   const [products, setProducts] = useState([]);
@@ -37,7 +38,7 @@ export default function ProductCards() {
               <Card.Title>{product.title}</Card.Title>
               <Card.Text>{product.description}</Card.Text>
               <div className="flex justify-between items-center">
-                <span className="text-lg font-bold">${product.price}</span>
+                 <span className="text-lg font-bold flex items-center"><MdOutlineCurrencyRupee />{product.price}</span>
                 <Button variant="primary">Buy Now</Button>
               </div>
             </Card.Body>
