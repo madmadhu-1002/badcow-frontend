@@ -5,7 +5,7 @@ import ProductCard from "@/app/components/ProductCard";
 
 
 export const metadata = {
-  title: "BaadCow",
+  title: "Clothing life",
   description: "Clothing Lifestyle",
 };
 

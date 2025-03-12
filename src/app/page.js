@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <>
-    <h1>BaadCow Products</h1>
+    <h1>Premium Clothes</h1>
     <Button onClick={() => router.push("/admin/login")}>Login</Button>
       <ProductCard />
     </>
