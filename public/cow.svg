@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#3DB4C2"/>
+    <g transform="translate(120,100)">
+        <rect x="0" y="0" width="272" height="312" rx="40" ry="40" fill="#fff" stroke="#000" stroke-width="4"/>
+            <text x="136" y="280" font-family="Arial, sans-serif" font-size="28" fill="#000" text-anchor="middle">baadcow</text>
+                <g transform="translate(60,40)">
+                      <circle cx="76" cy="60" r="50" fill="#fff" stroke="#000" stroke-width="4"/>
+                            <ellipse cx="56" cy="60" rx="8" ry="12" fill="#000"/>
+                                  <ellipse cx="96" cy="60" rx="8" ry="12" fill="#000"/>
+                                        <path d="M46 90 Q76 110 106 90" fill="#F9AFAE" stroke="#000" stroke-width="3"/>
+                                              <circle cx="66" cy="90" r="4" fill="#000"/>
+                                                    <circle cx="86" cy="90" r="4" fill="#000"/>
+                                                          <path d="M26 30 Q10 20 20 0" fill="#fff" stroke="#000" stroke-width="3"/>
+                                                                <path d="M126 30 Q142 20 132 0" fill="#fff" stroke="#000" stroke-width="3"/>
+                                                                      <path d="M85 15 Q105 35 100 50 Q115 45 120 20 Q105 0 85 15" fill="#000"/>
+                                                                          </g>
+                                                                            </g>
+                                                                            </svg>

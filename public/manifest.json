@@ -1,0 +1,17 @@
+{
+  "name": "Baadcow",
+  "short_name": "Baadcow",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "white",
+  "icons": [
+    
+    {
+      "src": "cow.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+    
+    
+  ]
+}
